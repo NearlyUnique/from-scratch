@@ -28,11 +28,13 @@ A quick, from scratch demo of go including some of the basic go concepts
 - channels type
 - blocking channels
 
-# structs
+# 5: structs
 - type definition
 - methods on types
 - slices
 - inline declaration
+- ignored variable
+- range -> multiple returns
 
 # interface
 - implied interface

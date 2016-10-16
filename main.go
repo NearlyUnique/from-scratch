@@ -6,25 +6,38 @@ import (
 	"time"
 )
 
+type blog struct {
+	name string
+}
+
 func main() {
-	const blogs = 3
 	t0 := time.Now()
 	rand.Seed(t0.Unix())
 	ch := make(chan string)
+	blogs := getBlogs()
 
-	for i := 0; i < blogs; i++ {
-		go collect(ch, i)
+	for _, b := range blogs {
+		go b.collect(ch)
 	}
 
-	for i := 0; i < blogs; i++ {
+	for _ = range blogs {
 		result := <-ch
 		fmt.Println(result)
 	}
+
 	fmt.Printf("Done in %v\n", time.Since(t0))
 }
 
-func collect(ch chan string, index int) {
+func (b blog) collect(ch chan string) {
 	delay := rand.Intn(500)
 	time.Sleep(time.Duration(delay) * time.Millisecond)
-	ch <- fmt.Sprintf("Collecting %d waited(%d)...\n", index, delay)
+	ch <- fmt.Sprintf("Collecting %s waited(%d)...\n", b.name, delay)
+}
+
+func getBlogs() []blog {
+	return []blog{
+		blog{name: "golang.org"},
+		blog{name: "medium.com"},
+		blog{name: "xkcd.com"},
+	}
 }
