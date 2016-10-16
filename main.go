@@ -6,9 +6,14 @@ import (
 	"time"
 )
 
-type blog struct {
-	name string
-}
+type (
+	blog struct {
+		name string
+	}
+	blogReader interface {
+		collect(result chan string)
+	}
+)
 
 func main() {
 	t0 := time.Now()
@@ -16,8 +21,8 @@ func main() {
 	ch := make(chan string)
 	blogs := getBlogs()
 
-	for _, b := range blogs {
-		go b.collect(ch)
+	for _, blog := range blogs {
+		go blog.collect(ch)
 	}
 
 	for _ = range blogs {
@@ -34,8 +39,8 @@ func (b blog) collect(ch chan string) {
 	ch <- fmt.Sprintf("Collecting %s waited(%d)...\n", b.name, delay)
 }
 
-func getBlogs() []blog {
-	return []blog{
+func getBlogs() []blogReader {
+	return []blogReader{
 		blog{name: "golang.org"},
 		blog{name: "medium.com"},
 		blog{name: "xkcd.com"},

@@ -36,7 +36,7 @@ A quick, from scratch demo of go including some of the basic go concepts
 - ignored variable
 - range -> multiple returns
 
-# interface
+# 6: interface
 - implied interface
 
 # take first answer
