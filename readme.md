@@ -2,30 +2,31 @@
 
 A quick, from scratch demo of go including some of the basic go concepts
 
-# Hello world.
+# 1: Hello world.
 - package main
 - func main
 - import
 - fmt.Println
 - go build
 
-# fake blog collection
+# 2: fake blog collection
 - random value
 - time package
 - 'typedef', casting time.Duration
 - loop, one type covers
 
-# multiple collectors
+# 3: multiple collectors
 - function inline, declare and execute
 - go routine
 - wait group
 - closure
   - closure bug
 
-# real func
+# 4: real func
 - func declare
+- package level globals
 - channels type
-- send results
+- blocking channels
 
 # structs
 - type definition
