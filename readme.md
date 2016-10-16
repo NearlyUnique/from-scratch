@@ -39,14 +39,15 @@ A quick, from scratch demo of go including some of the basic go concepts
 # 6: interface
 - implied interface
 
-# take first answer
-- terminate late routines
+# 7: take first answer
+- read from any respponse
+- added timeout
 
-# http server
+# 8: http server
 - handler
 - middleware
 
-# http client
+# 9: http client
 - basic request
 - json encoder
 

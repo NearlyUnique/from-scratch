@@ -17,7 +17,7 @@ type (
 
 func main() {
 	t0 := time.Now()
-	rand.Seed(t0.Unix())
+	rand.Seed(t0.UnixNano())
 	ch := make(chan string)
 	blogs := getBlogs()
 
@@ -25,9 +25,11 @@ func main() {
 		go blog.collect(ch)
 	}
 
-	for _ = range blogs {
-		result := <-ch
+	select {
+	case result := <-ch:
 		fmt.Println(result)
+	case <-time.After(200 * time.Millisecond):
+		fmt.Print("Ran out of time")
 	}
 
 	fmt.Printf("Done in %v\n", time.Since(t0))
