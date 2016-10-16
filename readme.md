@@ -43,13 +43,10 @@ A quick, from scratch demo of go including some of the basic go concepts
 - read from any respponse
 - added timeout
 
-# 8: http server
-- handler
-- middleware
-
-# 9: http client
+# 8: http client
 - basic request
-- json encoder
+- json decoder
+
 
 # Tools
 - go 1.7
