@@ -9,18 +9,18 @@ A quick, from scratch demo of go including some of the basic go concepts
 - fmt.Println
 - go build
 
-# fake search function
+# fake blog collection
 - random value
 - time package
 - 'typedef', casting time.Duration
 - loop, one type covers
 
-# multiple search engines
+# multiple collectors
 - function inline, declare and execute
 - go routine
+- wait group
 - closure
   - closure bug
-- wait group
 
 # real func
 - func declare
