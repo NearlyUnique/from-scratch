@@ -1,6 +1,11 @@
 # Overview
 
-A quick, from scratch demo of go including some of the basic go concepts
+A quick, from scratch demo of go including some of the basic go concepts. 
+
+Use git to move between code for these notes, tip is the complete version of these notes.
+
+e.g. to move to part 4: real func
+`git checkout part4`
 
 # 1: Hello world.
 - package main
